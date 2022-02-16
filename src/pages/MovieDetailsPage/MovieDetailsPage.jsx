@@ -1,14 +1,8 @@
 import { useState, useEffect, lazy, Suspense } from 'react';
 import * as filmAPI from '../../services/film-api';
 import backupImg from './backup.jpg';
-
-import {
-  useParams,
-  NavLink,
-  Link,
-  useRouteMatch,
-  Route,
-} from 'react-router-dom';
+import Button from 'components/Button';
+import { useParams, NavLink, useRouteMatch, Route } from 'react-router-dom';
 
 const Cast = lazy(() =>
   import('../../components/Cast' /*webpackChunkName: "cast"*/)
@@ -28,9 +22,7 @@ export default function MovieDetailsPage() {
 
   return (
     <>
-      <Link to="/">
-        <button>GoBack</button>
-      </Link>
+      <Button />
       {movie && (
         <div>
           <h2>{movie.title}</h2>
